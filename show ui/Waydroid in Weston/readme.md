@@ -1,0 +1,1 @@
+Perfect solution for a Windowed Android UI!
