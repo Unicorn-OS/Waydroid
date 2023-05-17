@@ -2,8 +2,11 @@
 https://github.com/waydroid/waydroid/issues/712
 
 ```
+# Works! PSI is key.
 CONFIG_PSI=y
-# CONFIG_PSI_DEFAULT_DISABLED is not set
+CONFIG_PSI_DEFAULT_DISABLED=y
+
+# /dev/binder
 CONFIG_ANDROID=y
 CONFIG_ANDROID_BINDER_IPC=y
 CONFIG_ANDROID_BINDERFS=y
