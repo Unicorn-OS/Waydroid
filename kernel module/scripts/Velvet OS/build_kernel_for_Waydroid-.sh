@@ -83,9 +83,12 @@ CONFIG_PSI=y''' \
     test(){
         cat $waydroid_cfg
         cat .config | grep -i android
+        cat .config | grep -i psi
     }
 }
 waydroid_config
+
+cd /compile/source/linux-stable-mt8
 
 # code from readme.mt8
 export ARCH=arm64
