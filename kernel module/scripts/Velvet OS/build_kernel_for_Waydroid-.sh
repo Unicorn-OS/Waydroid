@@ -68,25 +68,10 @@ done
 ## Snapshot
 btrfs sub snap -r /compile /root/patched
 
-waydroid_config(){
-    # https://wiki.archlinux.org/title/Waydroid#Building_a_kernel
-
-    waydroid_cfg=/compile/doc/waydroid-binder.cfg
-    echo '''CONFIG_ANDROID=y
-CONFIG_ANDROID_BINDER_IPC=y
-CONFIG_ANDROID_BINDERFS=n
-CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder"
-# https://forum.manjaro.org/t/do-we-need-psi-to-run-waydroid/100935
-CONFIG_PSI=y''' \
-    > $waydroid_cfg
-
-    test(){
-        cat $waydroid_cfg
-        cat .config | grep -i android
-        cat .config | grep -i psi
-    }
-}
-waydroid_config
+### Wayland Kernel Config!
+source waydroid_kernel_config.sh
+waydroid_kernel_config
+###
 
 cd /compile/source/linux-stable-mt8
 

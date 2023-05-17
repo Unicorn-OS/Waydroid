@@ -1,4 +1,8 @@
-required:  
-https://forum.manjaro.org/t/do-we-need-psi-to-run-waydroid/100935
+solution: https://github.com/waydroid/waydroid/issues/136#issuecomment-949694932
 
-`CONFIG_PSI=y`
+confirmation: https://forum.manjaro.org/t/do-we-need-psi-to-run-waydroid/100935
+
+```
+CONFIG_PSI=y
+CONFIG_PSI_DEFAULT_DISABLED=y
+```
