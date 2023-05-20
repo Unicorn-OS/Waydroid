@@ -3,8 +3,3 @@ Home: https://waydro.id
 
 doc: https://docs.waydro.id/
 
-# Kernel modules
-`# CONFIG_ANDROID_BINDER_IPC is not set`
-on ARM: https://forum.radxa.com/t/waydroid-on-armbian-how-to-install-it-properly/14243
-
-https://github.com/waydroid/waydroid/issues/590
