@@ -1,0 +1,9 @@
+---
+- hosts: arm_nodes
+  vars:
+    somevar: "value"
+    source: "package"
+
+  roles:
+  - pre
+  - Waydroid
