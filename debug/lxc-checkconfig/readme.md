@@ -1,5 +1,5 @@
 
-# Thread:
+# Thread: What are the new Lineage 18.1 Kernel config options that weren't needed with 17.1? #738
 https://github.com/waydroid/waydroid/issues/738#issuecomment-1416735290
 >Fixed!
 >
