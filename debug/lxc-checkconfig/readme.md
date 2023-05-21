@@ -3,7 +3,7 @@
 https://github.com/waydroid/waydroid/issues/738#issuecomment-1416735290
 >Fixed!
 >
->Definitely make sure to run lxc-checkconfig, look and see if it says enabled on (almost) everything (I don't use systemd, so there is: Cgroup v1 systemd controller: missing.
+>**Definitely make sure to run** `lxc-checkconfig`**, look and see if it says enabled on (almost) everything (I don't use systemd, so there is: Cgroup v1 systemd controller: missing.**
 >
 >Cgroup v1 mount points are important.
 >
