@@ -26,4 +26,4 @@
     mode: '0744'
   loop:
   - kill.sh
-  - start-waydroid.sh
+  - start waydroid.sh
