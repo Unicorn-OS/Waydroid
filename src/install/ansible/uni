@@ -5,5 +5,5 @@
     source: "package"
 
   roles:
-  - pre
+  - wayland weston
   - Waydroid
