@@ -21,6 +21,6 @@ ansible_user=me
 ansible_become_password=u
 
 
-[test:children]
-fedora
+[sbc:children]
+#fedora
 ubuntu

@@ -1,5 +1,5 @@
 ---
-- hosts: arm_nodes
+- hosts: sbc
   vars:
     somevar: "value"
     source: "package"
