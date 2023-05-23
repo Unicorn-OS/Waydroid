@@ -1,0 +1,6 @@
+---
+- name: waydroid init
+  ansible.builtin.shell: waydroid init
+  args:
+    creates: somelog.txt
+  become: true

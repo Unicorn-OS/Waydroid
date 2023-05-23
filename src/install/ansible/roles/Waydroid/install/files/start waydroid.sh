@@ -1,4 +1,3 @@
-sudo waydroid init
 sudo waydroid container start
 # OR
 sudo systemctl enable waydroid-container.service
