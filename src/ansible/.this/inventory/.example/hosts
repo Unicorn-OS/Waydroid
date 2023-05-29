@@ -9,18 +9,20 @@ ansible_become_password=u
 [fedora]
 192.168.122.84
 
-[fedora:vars]
-ansible_user=me
-ansible_become_password=u
+[chromebook]
+todo
 
 [ubuntu]
-192.168.122.85
+192.168.122.159
 
-[ubuntu:vars]
+[sbc]
+10.0.0.143
+
+[node:children]
+ubuntu
+sbc
+
+[node:vars]
 ansible_user=me
 ansible_become_password=u
 
-
-[sbc:children]
-#fedora
-ubuntu
