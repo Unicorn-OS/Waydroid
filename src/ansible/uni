@@ -1,5 +1,5 @@
 ---
-- hosts: sbc
+- hosts: ubuntu #, sbc
   vars:
     somevar: "value"
     source: "package"
