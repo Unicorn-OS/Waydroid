@@ -2,4 +2,4 @@
 sudo apt list --installed > apt-list
 
 ## names only
-apt-cache pkgnames 
+apt-cache pkgnames > pkgs
