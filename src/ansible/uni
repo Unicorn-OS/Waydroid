@@ -7,3 +7,4 @@
   roles:
   - wayland weston
   - Waydroid
+  - proxy cache/restore
