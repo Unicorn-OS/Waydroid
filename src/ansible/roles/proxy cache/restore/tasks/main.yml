@@ -19,3 +19,4 @@
   loop:
   - system.img
   - vendor.img
+  become: true
