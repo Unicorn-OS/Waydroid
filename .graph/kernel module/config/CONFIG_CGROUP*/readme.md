@@ -1,3 +1,15 @@
+check:
+`cat /boot/config* | grep -i "cgroup"`
+
+# Differences between X86 and Armbian:
+**set on X86 Ubuntu but not Armbian:**
+```
+CONFIG_CGROUP_MISC=y
+CONFIG_BLK_CGROUP_FC_APPID=y
+CONFIG_BLK_CGROUP_IOCOST=y
+CONFIG_BLK_CGROUP_IOPRIO=y
+```
+
 # What are the new Lineage 18.1 Kernel config options?
 > Not a bug, a question: Since Lineage 18.1 images, new Kernel config options are needed for Waydroid to work.
 > The Lineage 18.1 images work with the Void Linux distro-kernel.
