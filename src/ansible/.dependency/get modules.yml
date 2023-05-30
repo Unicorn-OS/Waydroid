@@ -7,6 +7,7 @@
     repos:
     - "Unicorn-OS/ADB"
     - "Unicorn-OS/Android-Image-Kitchen.buildtool"
+    - "UniStor/Squid-proxy"
 
   tasks:
   - name: Git checkout
