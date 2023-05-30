@@ -10,6 +10,17 @@
     state: directory
   delegate_to: localhost
 
+- name: Has node been initialized?
+  stat:
+    path: "{{waydroid_images}}/{{images [0]}}"
+  register: image_on_node
+
+- name: Does proxy cache exist?
+  stat:
+    path: "{{cache_dir}}/{{ansible_architecture}}/{{images [0]}}"
+  register: proxy_cache
+  delegate_to: localhost
+
 - name: Backup images from node to local
   ansible.builtin.fetch:
     src: "{{waydroid_images}}/{{item}}"
@@ -17,4 +28,5 @@
     flat: yes
     validate_checksum: false
   loop: "{{images}}"
-  # become: false # Will NOT work with Become! due to slurp
+  when: (image_on_node.stat.exists and not proxy_cache.stat.exists) or (recreate_cache)
+  # Will NOT work with Become! due to slurp
