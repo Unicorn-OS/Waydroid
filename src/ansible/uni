@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu #, sbc
+- hosts: sbc #ubuntu, sbc
   vars:
     local_user: "me" # Fix this in the Future! Using `delegate(local)`
     
