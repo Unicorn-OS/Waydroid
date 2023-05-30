@@ -17,4 +17,4 @@
     flat: yes
     validate_checksum: false
   loop: "{{images}}"
-  # become: true # Will NOT work with Become! due to slurp
+  # become: false # Will NOT work with Become! due to slurp

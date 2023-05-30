@@ -8,13 +8,23 @@
     mode: '0755'
   become: true
 
-- name: Copy image
-  ansible.builtin.copy:
-    src: "/home/{{local_user}}/.uni/cache/waydroid/images/{{item}}"
-    dest: "/var/lib/waydroid/images/{{item}}"
-    owner: root
-    group: root
-    mode: '0644'
-    force: false
-  loop: "{{images}}"
-  become: true
+- name: Does proxy cache exist?
+  stat:
+    path: "{{cache_dir}}/{{ansible_architecture}}/{{images [0]}}"
+  register: proxy_cache
+  delegate_to: localhost
+
+- debug:
+    msg: "Proxy cache exists: {{proxy_cache.stat.exists}}"
+  when: proxy_cache.stat.exists
+
+# - name: Copy image
+#   ansible.builtin.copy:
+#     src: "/home/{{local_user}}/.uni/cache/waydroid/images/{{item}}"
+#     dest: "/var/lib/waydroid/images/{{item}}"
+#     owner: root
+#     group: root
+#     mode: '0644'
+#     force: false
+#   loop: "{{images}}"
+#   become: true

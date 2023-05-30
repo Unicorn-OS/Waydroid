@@ -3,5 +3,5 @@ dependencies:
 - wayland weston
 - Waydroid/install
 - proxy cache/restore
-- Waydroid/init
+# - Waydroid/init
 - proxy cache/backup
