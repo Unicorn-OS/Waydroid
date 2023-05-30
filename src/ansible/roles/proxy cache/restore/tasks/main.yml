@@ -1,0 +1,21 @@
+---
+- name: Create waydroid images directory
+  ansible.builtin.file:
+    path: "{{waydroid_images}}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+  become: true
+
+- name: Copy image
+  ansible.builtin.copy:
+    src: "/home/{{local_user}}/.uni/cache/waydroid/images/{{item}}"
+    dest: "/var/lib/waydroid/images/{{item}}"
+    owner: root
+    group: root
+    mode: '0644'
+    force: false
+  loop:
+  - system.img
+  - vendor.img

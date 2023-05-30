@@ -1,8 +1,8 @@
 ---
 - hosts: ubuntu #, sbc
   vars:
-    somevar: "value"
-    source: "package"
+    local_user: "me" # Fix this in the Future! Using `delegate(local)`
+    
 
   roles:
   - wayland weston
