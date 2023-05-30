@@ -1,0 +1,20 @@
+---
+
+- debug:
+    msg: "is ARM: {{ansible_architecture}}"
+  when: ansible_architecture == "aarch64"
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{cache_dir}}/{{ansible_architecture}}"
+    state: directory
+  delegate_to: localhost
+
+- name: Backup images from node to local
+  ansible.builtin.fetch:
+    src: "{{waydroid_images}}/{{item}}"
+    dest: "{{cache_dir}}/{{ansible_architecture}}/"
+    flat: yes
+    validate_checksum: false
+  loop: "{{images}}"
+  # become: true # Will NOT work with Become! due to slurp

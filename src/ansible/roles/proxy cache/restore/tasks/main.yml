@@ -16,7 +16,5 @@
     group: root
     mode: '0644'
     force: false
-  loop:
-  - system.img
-  - vendor.img
+  loop: "{{images}}"
   become: true
