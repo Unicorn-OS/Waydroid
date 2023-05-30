@@ -1,6 +1,6 @@
 install(){
     # Ubuntu, Debian
-    adb shell pm disable-user --user 0 org.lineageos.jelly
+    sudo apt install android-sdk-platform-tools -y
 }
 
 # May have to run Twice.
