@@ -1,0 +1,20 @@
+---
+
+- name: Copy kernel_config to userpatches
+  ansible.builtin.copy:
+    src: linux-rockchip64-edge.config
+    dest: "{{userpatches}}/"
+
+
+- name: Add packages
+  ansible.builtin.lineinfile:
+    path: "{{userpatches}}/lib.config"
+    regexp: '^PACKAGE_LIST_ADDITIONAL='
+    line: 'PACKAGE_LIST_ADDITIONAL="$PACKAGE_LIST_ADDITIONAL {{packages}}"'
+    create: yes
+
+
+- name: Add Waydroid
+  ansible.builtin.template:
+    src: customize-image.sh.j2
+    dest: "{{userpatches}}/customize-image.sh"

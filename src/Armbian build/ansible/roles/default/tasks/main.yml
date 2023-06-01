@@ -1,0 +1,14 @@
+---
+- name: prereqs
+  ansible.builtin.apt:
+    pkg:
+    - git
+  become: true
+
+- name: Git checkout
+  ansible.builtin.git:
+    repo: '{{armbian_repo}}'
+    dest: "{{}}"
+    version: release-0.22
+
+--depth=1 --branch=main 
