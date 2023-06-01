@@ -8,7 +8,8 @@
 - name: Git checkout
   ansible.builtin.git:
     repo: '{{armbian_repo}}'
-    dest: "{{}}"
-    version: release-0.22
-
---depth=1 --branch=main 
+    dest: "{{source_dir}}"
+    version: main
+    depth: 1
+    single_branch: yes
+    update: false
