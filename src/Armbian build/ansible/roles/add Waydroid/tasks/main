@@ -1,11 +1,5 @@
 ---
 
-- name: Copy kernel_config to userpatches
-  ansible.builtin.copy:
-    src: linux-rockchip64-edge.config
-    dest: "{{userpatches}}/"
-
-
 - name: Add packages
   ansible.builtin.lineinfile:
     path: "{{userpatches}}/lib.config"

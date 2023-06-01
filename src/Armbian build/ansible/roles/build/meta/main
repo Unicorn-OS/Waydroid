@@ -1,4 +1,5 @@
 ---
 dependencies:
 - default
-- add Waydroid
+- kernel config
+# - add Waydroid
