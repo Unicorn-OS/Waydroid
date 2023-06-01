@@ -2,4 +2,4 @@
 dependencies:
 - default
 - kernel config
-# - add Waydroid
+- Waydroid script
