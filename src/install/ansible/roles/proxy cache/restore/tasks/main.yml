@@ -1,4 +1,5 @@
 ---
+
 - name: Create waydroid directory
   ansible.builtin.file:
     path: "{{waydroid_image_dir}}"
@@ -14,10 +15,6 @@
   register: proxy_cache
   delegate_to: localhost
 
-- debug:
-    msg: "Proxy cache exists: {{proxy_cache.stat.exists}}"
-  when: proxy_cache.stat.exists
-
 - name: Restore image
   ansible.builtin.copy:
     src: "{{cache_dir}}/{{ansible_architecture}}/images/{{item}}"
@@ -28,6 +25,7 @@
     force: false
   loop: "{{images}}"
   become: true
+  when: proxy_cache_exists
 
 - name: Restore waydroid init files
   ansible.builtin.copy:
@@ -35,4 +33,4 @@
     dest: "{{waydroid_dir}}/"
   loop: "{{files}}"
   become: true
-  when: (proxy_cache.stat.exists)
+  when: proxy_cache_exists

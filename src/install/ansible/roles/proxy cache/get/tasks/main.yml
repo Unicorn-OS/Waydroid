@@ -5,6 +5,11 @@
     path: "{{waydroid_image_dir}}/{{images [0]}}"
   register: image_on_node
 
+- name: Set fact
+  ansible.builtin.set_fact:
+    node_has_images: "{{image_on_node.stat.exists}}"
+
+
 ## Not used
 # - name: Has node been initialized?
 #   stat:
@@ -17,3 +22,10 @@
     path: "{{cache_dir}}/{{ansible_architecture}}/images/{{images [0]}}"
   register: proxy_cache
   delegate_to: localhost
+
+- name: Set fact
+  ansible.builtin.set_fact:
+    proxy_cache_exists: "{{proxy_cache.stat.exists}}"
+
+# - debug:
+#     msg: "Exists? {{proxy_cache.stat.exists}}"
