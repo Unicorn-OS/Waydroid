@@ -1,9 +1,9 @@
 ---
 
-- name: Backup exists?
+- name: Archive on node exists?
   stat:
     path: "{{backup_file}}"
-  register: backup
+  register: archive
 
 
 # Todo: Has a tendency to ssh-timeout. https://www.axelerant.com/blog/how-handle-long-running-tasks-ansible
@@ -17,7 +17,7 @@
     format: gz
     owner: "{{ansible_user}}"
     group: "{{ansible_user}}"
-  when: not backup.stat.exists
+  when: not archive.stat.exists
   become: true
 
 - name: Create backup dir on local
@@ -29,6 +29,6 @@
 - name: Copy to local
   ansible.builtin.fetch:
     src: "{{backup_file}}"
-    dest: "{{backup_dir}}"
+    dest: "{{backup_dir}}/"
     flat: yes
-  when: to_local
+  when: to_local and archive.stat.exists
