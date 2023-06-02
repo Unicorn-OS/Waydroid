@@ -1,7 +1,7 @@
 ---
 - name: Create waydroid directory
   ansible.builtin.file:
-    path: "{{waydroid_images}}"
+    path: "{{waydroid_image_dir}}"
     state: directory
     owner: root
     group: root

@@ -18,4 +18,4 @@ images:
 files:
 - waydroid_base.prop
 - waydroid.cfg
-- waydroid.log
+# - waydroid.log
