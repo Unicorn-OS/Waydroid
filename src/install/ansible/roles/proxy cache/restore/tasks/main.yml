@@ -1,5 +1,5 @@
 ---
-- name: Create waydroid images directory
+- name: Create waydroid directory
   ansible.builtin.file:
     path: "{{waydroid_images}}"
     state: directory
@@ -18,13 +18,22 @@
     msg: "Proxy cache exists: {{proxy_cache.stat.exists}}"
   when: proxy_cache.stat.exists
 
-# - name: Copy image
-#   ansible.builtin.copy:
-#     src: "/home/{{local_user}}/.uni/cache/waydroid/images/{{item}}"
-#     dest: "/var/lib/waydroid/images/{{item}}"
-#     owner: root
-#     group: root
-#     mode: '0644'
-#     force: false
-#   loop: "{{images}}"
-#   become: true
+- name: Restore image
+  ansible.builtin.copy:
+    src: "{{cache_dir}}/{{ansible_architecture}}/images/{{item}}"
+    dest: "{{waydroid_image_dir}}/{{item}}"
+    owner: root
+    group: root
+    mode: '0644'
+    force: false
+  loop: "{{images}}"
+  become: true
+
+- name: Restore waydroid init files
+  ansible.builtin.fetch:
+    src: "{{cache_dir}}/{{ansible_architecture}}/"
+    dest: "{{waydroid_dir}}/{{item}}"
+    flat: yes
+    validate_checksum: false
+  loop: "{{files}}"
+  when: (image_on_node.stat.exists and not proxy_cache.stat.exists) or (recreate_cache)

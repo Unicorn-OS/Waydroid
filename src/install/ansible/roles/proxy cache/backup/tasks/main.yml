@@ -4,29 +4,41 @@
     msg: "is ARM: {{ansible_architecture}}"
   when: ansible_architecture == "aarch64"
 
-- name: Create a directory if it does not exist
+- name: Create a directory
   ansible.builtin.file:
-    path: "{{cache_dir}}/{{ansible_architecture}}"
+    path: "{{cache_dir}}/{{ansible_architecture}}/{{item}}"
     state: directory
   delegate_to: localhost
+  loop:
+  - images
 
 - name: Has node been initialized?
   stat:
-    path: "{{waydroid_images}}/{{images [0]}}"
+    path: "{{waydroid_image_dir}}/{{images [0]}}"
   register: image_on_node
 
 - name: Does proxy cache exist?
   stat:
-    path: "{{cache_dir}}/{{ansible_architecture}}/{{images [0]}}"
+    path: "{{cache_dir}}/{{ansible_architecture}}/images/{{images [0]}}"
   register: proxy_cache
   delegate_to: localhost
 
-- name: Backup images from node to local
+- name: Backup images
   ansible.builtin.fetch:
-    src: "{{waydroid_images}}/{{item}}"
-    dest: "{{cache_dir}}/{{ansible_architecture}}/"
+    src: "{{waydroid_image_dir}}/{{item}}"
+    dest: "{{cache_dir}}/{{ansible_architecture}}/images/"
     flat: yes
     validate_checksum: false
   loop: "{{images}}"
   when: (image_on_node.stat.exists and not proxy_cache.stat.exists) or (recreate_cache)
   # Will NOT work with Become! due to slurp
+
+
+- name: Backup waydroid init files
+  ansible.builtin.fetch:
+    src: "{{waydroid_dir}}/{{item}}"
+    dest: "{{cache_dir}}/{{ansible_architecture}}/"
+    flat: yes
+    validate_checksum: false
+  loop: "{{files}}"
+  when: (image_on_node.stat.exists and not proxy_cache.stat.exists) or (recreate_cache)
