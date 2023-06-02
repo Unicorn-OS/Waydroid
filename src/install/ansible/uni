@@ -1,5 +1,5 @@
 ---
-- hosts: node
+- hosts: node #local
   vars:
     local_user: "me" # Fix this in the Future! Using `delegate(local)`
   roles:
