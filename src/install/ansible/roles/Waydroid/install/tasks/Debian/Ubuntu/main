@@ -18,12 +18,3 @@
     - waydroid
   become: true
 
-- name: Copy start-wayland script
-  ansible.builtin.copy:
-    src: "{{item}}"
-    dest: "/home/{{ansible_user}}/bin/"
-    owner: "{{ansible_user}}"
-    mode: '0744'
-  loop:
-  - kill.sh
-  - start waydroid.sh
