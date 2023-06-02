@@ -1,4 +1,7 @@
 ---
+- name: get cache status
+  ansible.builtin.include_tasks:
+    file: roles/proxy cache/get/tasks/status.yml
 
 - name: Create waydroid directory
   ansible.builtin.file:

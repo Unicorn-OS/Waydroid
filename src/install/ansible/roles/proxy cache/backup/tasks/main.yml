@@ -1,8 +1,7 @@
 ---
-
-- debug:
-    msg: "is ARM: {{ansible_architecture}}"
-  when: ansible_architecture == "aarch64"
+- name: get cache status
+  ansible.builtin.include_tasks:
+    file: roles/proxy cache/get/tasks/status.yml
 
 - name: Create a directory
   ansible.builtin.file:

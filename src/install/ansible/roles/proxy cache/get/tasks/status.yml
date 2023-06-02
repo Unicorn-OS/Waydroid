@@ -9,14 +9,6 @@
   ansible.builtin.set_fact:
     node_has_images: "{{image_on_node.stat.exists}}"
 
-
-## Not used
-# - name: Has node been initialized?
-#   stat:
-#     path: "{{waydroid_dir}}/{{files [0]}}"
-#   register: file_on_node
-
-
 - name: Does proxy cache exist?
   stat:
     path: "{{cache_dir}}/{{ansible_architecture}}/images/{{images [0]}}"
@@ -27,5 +19,9 @@
   ansible.builtin.set_fact:
     proxy_cache_exists: "{{proxy_cache.stat.exists}}"
 
-# - debug:
-#     msg: "Exists? {{proxy_cache.stat.exists}}"
+## Not used
+# - name: Has node been initialized?
+#   stat:
+#     path: "{{waydroid_dir}}/{{files [0]}}"
+#   register: file_on_node
+
