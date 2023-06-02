@@ -8,7 +8,7 @@
     group: "{{ansible_user}}"
 
 - name: Disable default Browser
-  ansible.builtin.shell: "WAYLAND_DISPLAY=wayland-{{wayland_display}} waydroid shell pm disable-user --user 0 org.lineageos.jelly > /var/lib/waydroid/log/disable-browser.log"
+  ansible.builtin.shell: "{{wayland_display}} waydroid shell pm disable-user --user 0 org.lineageos.jelly > /var/lib/waydroid/log/disable-browser.log"
   args:
     creates: waydroid shell pm disable-user --user 0 org.lineageos.jelly > /var/lib/waydroid/log/disable-browser.log
 
