@@ -10,3 +10,6 @@ waydroid show-full-ui
 # Or
 waydroid launch org.jagex.Runescape
 }
+
+launch_weston_on_desktop
+waydroid_inside_weston
