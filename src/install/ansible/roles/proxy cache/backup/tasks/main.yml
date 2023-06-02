@@ -12,16 +12,7 @@
   loop:
   - images
 
-- name: Has node been initialized?
-  stat:
-    path: "{{waydroid_image_dir}}/{{images [0]}}"
-  register: image_on_node
-
-- name: Does proxy cache exist?
-  stat:
-    path: "{{cache_dir}}/{{ansible_architecture}}/images/{{images [0]}}"
-  register: proxy_cache
-  delegate_to: localhost
+# include_tasks: get/tasks/main.yml
 
 - name: Backup images
   ansible.builtin.fetch:

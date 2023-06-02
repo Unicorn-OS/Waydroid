@@ -36,4 +36,4 @@
     flat: yes
     validate_checksum: false
   loop: "{{files}}"
-  when: (image_on_node.stat.exists and not proxy_cache.stat.exists) or (recreate_cache)
+  when: (not image_on_node.stat.exists and proxy_cache.stat.exists)
