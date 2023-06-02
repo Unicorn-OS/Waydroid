@@ -30,10 +30,9 @@
   become: true
 
 - name: Restore waydroid init files
-  ansible.builtin.fetch:
-    src: "{{cache_dir}}/{{ansible_architecture}}/"
-    dest: "{{waydroid_dir}}/{{item}}"
-    flat: yes
-    validate_checksum: false
+  ansible.builtin.copy:
+    src: "{{cache_dir}}/{{ansible_architecture}}/{{item}}"
+    dest: "{{waydroid_dir}}/"
   loop: "{{files}}"
-  when: (not image_on_node.stat.exists and proxy_cache.stat.exists)
+  become: true
+  when: (proxy_cache.stat.exists)

@@ -1,9 +1,16 @@
 ---
 
-- name: Has node been initialized?
+- name: Does node have images?
   stat:
     path: "{{waydroid_image_dir}}/{{images [0]}}"
   register: image_on_node
+
+## Not used
+# - name: Has node been initialized?
+#   stat:
+#     path: "{{waydroid_dir}}/{{files [0]}}"
+#   register: file_on_node
+
 
 - name: Does proxy cache exist?
   stat:
