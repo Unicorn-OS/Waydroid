@@ -3,6 +3,4 @@
   vars:
     local_user: "me" # Fix this in the Future! Using `delegate(local)`
   roles:
-  # - Waydroid
-  # - proxy cache/backup
-  - proxy cache/restore
+  - Waydroid

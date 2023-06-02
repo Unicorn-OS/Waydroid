@@ -2,6 +2,6 @@
 dependencies:
 - wayland weston
 - Waydroid/install
-- proxy cache/restore
-# - Waydroid/init
+- proxy cache/restore  # If cached, this will be alot faster!
+- Waydroid/init
 - proxy cache/backup
