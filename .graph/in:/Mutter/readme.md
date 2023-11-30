@@ -13,3 +13,8 @@ export $(dbus-launch)
 mutter --nested --wayland
 WAYLAND_DISPLAY=wayland-0 gnome-terminal
 ```
+
+# with Xfce4-Terminal
+```
+mutter --nested --wayland waydroid xfce4-terminal
+```
