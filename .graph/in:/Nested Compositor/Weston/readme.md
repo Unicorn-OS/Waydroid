@@ -16,3 +16,14 @@ sch: https://www.google.com/search?q=wayland+weston+nested, https://www.google.c
 
 # Waydroid.launch()
 [Open inside weston runned in X11 session #49](https://github.com/waydroid/waydroid/issues/49)
+
+works:
+```
+# Host
+sudo waydroid container stop
+sudo waydroid container start
+WAYLAND_DISPLAY=wayland-0 weston -Swayland-1
+
+# inside weston:
+waydroid show-full-ui
+```
