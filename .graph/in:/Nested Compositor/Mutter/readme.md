@@ -1,8 +1,3 @@
-# Guide:
-source: https://www.reddit.com/r/EndeavourOS/comments/11kxlyu/is_there_an_idiotproof_guide_for_running_waydroid/
-
-```mutter --nested --wayland waydroid show-full-ui```
-
 sch: https://www.google.com/search?q=mutter+nested+wayland
 
 # with: Gnome Terminal
@@ -14,7 +9,10 @@ mutter --nested --wayland
 WAYLAND_DISPLAY=wayland-1 DISPLAY=:2 gnome-terminal
 ```
 
-# with Xfce4-Terminal
-```
-mutter --nested --wayland xfce4-terminal
-```
+# example: Xfce4-Terminal
+`mutter --nested --wayland xfce4-terminal`
+
+# Waydroid.launch()
+source: https://www.reddit.com/r/EndeavourOS/comments/11kxlyu/is_there_an_idiotproof_guide_for_running_waydroid/
+
+`mutter --nested --wayland waydroid show-full-ui`
