@@ -11,7 +11,7 @@ sch: https://www.google.com/search?q=mutter+nested+wayland
 ```
 export $(dbus-launch)
 mutter --nested --wayland
-WAYLAND_DISPLAY=wayland-0 gnome-terminal
+WAYLAND_DISPLAY=wayland-1 DISPLAY=:2 gnome-terminal
 ```
 
 # with Xfce4-Terminal

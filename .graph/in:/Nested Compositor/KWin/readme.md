@@ -1,3 +1,7 @@
+# Doc:
+https://community.kde.org/KWin/Wayland#Starting_a_nested_KWin
+
+# Guide:
 https://www.reddit.com/r/EndeavourOS/comments/11kxlyu/is_there_an_idiotproof_guide_for_running_waydroid/
 
 source
