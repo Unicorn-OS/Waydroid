@@ -1,6 +1,7 @@
-sch: https://www.google.com/search?q=wayland+weston+nested
+sch: https://www.google.com/search?q=wayland+weston+nested, https://www.google.com/search?q=launch+inside+nested+weston
 
 # Wiki:
+- https://wiki.archlinux.org/title/Weston
 - https://wiki.gentoo.org/wiki/Weston
 
 # Doc:
@@ -14,4 +15,4 @@ sch: https://www.google.com/search?q=wayland+weston+nested
 
 
 # Waydroid.launch()
-https://github.com/waydroid/waydroid/issues/49
+[Open inside weston runned in X11 session #49](https://github.com/waydroid/waydroid/issues/49)
