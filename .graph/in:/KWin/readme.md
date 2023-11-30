@@ -5,3 +5,5 @@ source
 
 # install:
 https://blog.martin-graesslin.com/blog/2016/07/why-does-kwin_wayland-not-start/
+
+```sudo apt install kwin-wayland-backend-x11 kwin-wayland-backend-drm```
