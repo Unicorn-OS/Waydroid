@@ -11,3 +11,8 @@ source
 https://blog.martin-graesslin.com/blog/2016/07/why-does-kwin_wayland-not-start/
 
 ```sudo apt install kwin-wayland-backend-x11 kwin-wayland-backend-drm```
+
+# Waydroid.launch()
+https://github.com/waydroid/waydroid/issues/49#issuecomment-987021281
+
+>instead of using weston, use `kwin_wayland "waydroid show-full-ui"`` This launches a wayland session under X11. :)
