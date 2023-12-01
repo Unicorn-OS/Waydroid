@@ -1,0 +1,3 @@
+# OS cache:
+cache_dir: "/var/lib/waydroid/cache_http"
+file: "lineage-18.1-20231125-VANILLA-waydroid_x86_64-system.zip"
