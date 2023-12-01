@@ -5,3 +5,5 @@ sudo systemctl start waydroid-container.service
 sudo venv/bin/python3 main.py install gapps
 
 sudo venv/bin/python3 main.py certified
+
+sudo venv/bin/python3 main.py install smartdock
