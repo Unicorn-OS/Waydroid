@@ -1,21 +1,27 @@
-waydroid_dir=/usr/lib/waydroid
-tools=$waydroid_dir/tools
 patch=uni.backup.patch
 
+apply_patch(){
+  cd $waydroid_dir
+  git apply $patch
+}
+
 devel(){
-  devel=~/git/waydroid/tools
+  waydroid_dir=~/git/waydroid
   if [ -f $devel ]; then
-    ln -srf uni $devel
+    ln -sf `pwd`/uni $waydroid_dir/tools/
   fi
+
+  ln -sf `pwd`/patch/${patch} $waydroid_dir/
+  apply_patch
 }
 
 prod(){
-  ln -srf python/uni $tools/
+  waydroid_dir=/usr/lib/waydroid
+  ln -sf `pwd`/python/uni $waydroid_dir/tools/
   
-  ln -srf patch/$patch $waydroid_dir
-  cd $waydroid_dir
-  git apply $patch 
+  ln -sf `pwd`/patch/$patch $waydroid_dir/
+  apply_patch
 }
 
-prod
-
+#prod
+devel
