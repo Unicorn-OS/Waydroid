@@ -7,3 +7,7 @@ sudo venv/bin/python3 main.py install gapps
 sudo venv/bin/python3 main.py certified
 
 sudo venv/bin/python3 main.py install smartdock
+
+multi_window_mode(){
+  waydroid prop set persist.waydroid.multi_windows true
+}
