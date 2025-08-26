@@ -3,3 +3,4 @@ roles:
 - UniInc.Waydroid
 - UniInc.Waydroid-Extras-Script
 - UniInc.Git
+- UniInc.Python-venv
