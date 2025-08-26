@@ -1,7 +1,7 @@
-- hosts: localhost #, node
+- hosts: node #localhost #, node
   vars:
     devel: true
   roles:
     - UniInc.Waydroid
+    - UniInc.Waydroid-Software-Rendering
     - UniInc.Waydroid-Extras-Script
-
