@@ -3,7 +3,7 @@
     devel: true
   roles:
     - ansible-role-Waydroid
-    - ansible-role-Extras-Script
+    - ansible-role-Waydroid-Extras-Script
 #    - UniInc.Waydroid
 #    - UniInc.Waydroid-Extras-Script
 
