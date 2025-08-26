@@ -1,0 +1,6 @@
+- hosts: node #localhost
+  vars:
+    devel: true
+  roles:
+    - ansible-role-Waydroid
+
